@@ -1,6 +1,6 @@
 #include<iostream>
 #include<math.h>
-
+#include <iomanip>
 using namespace std;
 
 /*
@@ -9,28 +9,27 @@ Write a program to calculate mean, variance and standard deviation.
 
 int main()
 {
-    int n;
-    cin>>n;
-    int arr[n];
-    for(int i=0;i<n;i++)
+    int arr[5];
+    for(int i=0;i<5;i++)
     {
         cin>>arr[i];
     }
     int sum=0;
-    for(int i=0;i<n;i++)
+    for(int i=0;i<5;i++)
     {
         sum+=arr[i];
     }
-    float mean=sum/n;
+    float mean=sum/5;
     float var=0;
-    for(int i=0;i<n;i++)
+    for(int i=0;i<5;i++)
     {
         var+=pow(arr[i]-mean,2);
     }
-    var=var/n;
+    var=var/5;
     float sd=sqrt(var);
-    cout<<"Mean: "<<mean<<endl;
-    cout<<"Variance: "<<var<<endl;
-    cout<<"Standard Deviation: "<<sd;
+    cout<<mean<<endl;
+    cout << fixed << setprecision(2);
+    cout << var << endl;
+    cout<<sd << endl;
     return 0;
 }
